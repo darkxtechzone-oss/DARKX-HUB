@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ingia — DARKX HUB</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div id="nav-slot"></div>
+
+<main class="container section" style="padding-top:50px;">
+  <div class="panel panel-narrow">
+    <div class="flex gap-8" style="justify-content:center; margin-bottom:18px;">
+      <button class="chip active" id="tab-login">Ingia</button>
+      <button class="chip" id="tab-register">Jisajili</button>
+    </div>
+
+    <div id="form-alert"></div>
+
+    <form id="login-form">
+      <div class="field">
+        <label>Namba ya Simu</label>
+        <input type="text" id="l-number" required placeholder="255xxxxxxxxx">
+      </div>
+      <div class="field">
+        <label>Password</label>
+        <input type="password" id="l-password" required placeholder="••••••••">
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Ingia</button>
+    </form>
+
+    <form id="register-form" class="hidden">
+      <div class="field">
+        <label>Jina Lako</label>
+        <input type="text" id="r-name" required placeholder="Jina kamili">
+      </div>
+      <div class="field">
+        <label>Namba ya Simu</label>
+        <input type="text" id="r-number" required placeholder="255xxxxxxxxx">
+      </div>
+      <div class="field">
+        <label>Password</label>
+        <input type="password" id="r-password" required placeholder="••••••••">
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Jisajili</button>
+    </form>
+  </div>
+</main>
+
+<div id="footer-slot"></div>
+<script src="/api.js"></script>
+<script src="/login.js"></script>
+</body>
+</html>

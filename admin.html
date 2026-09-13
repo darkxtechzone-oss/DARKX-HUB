@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — DARKX HUB</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<!-- Password gate -->
+<div id="gate" class="admin-gate">
+  <div class="panel panel-narrow">
+    <div class="center">
+      <span class="brand-mark" style="display:inline-flex;">DX</span>
+      <h3 class="mt-16">Admin Access</h3>
+      <p class="text-muted mt-8">Weka password ya admin kuendelea.</p>
+    </div>
+    <div id="gate-alert"></div>
+    <form id="gate-form" class="mt-16">
+      <div class="field">
+        <input type="password" id="gate-password" placeholder="Admin password" required autofocus>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Fungua Dashboard</button>
+    </form>
+    <div class="center mt-16"><a href="/" class="text-muted" style="font-size:.85rem">← Rudi Nyumbani</a></div>
+  </div>
+</div>
+
+<!-- Dashboard -->
+<div id="dashboard" class="admin-shell hidden">
+  <aside class="admin-side">
+    <div class="brand"><span class="brand-mark">DX</span> ADMIN</div>
+    <button class="admin-nav-btn active" data-tab="overview">📊 Overview</button>
+    <button class="admin-nav-btn" data-tab="pending">🕓 Zinazosubiri</button>
+    <button class="admin-nav-btn" data-tab="tools">🧩 Tools Zote</button>
+    <button class="admin-nav-btn" data-tab="users">👤 Watumiaji</button>
+    <div style="flex:1"></div>
+    <button class="admin-nav-btn" id="admin-logout">🚪 Toka</button>
+  </aside>
+
+  <main class="admin-main">
+    <div id="tab-overview" class="tab-panel">
+      <h2>Muhtasari wa Site</h2>
+      <div class="admin-stats mt-16" id="admin-stats"></div>
+      <div class="panel" style="max-width:none;">
+        <h3>Karibu, MrX Dev 👋</h3>
+        <p class="text-muted mt-8">Hapa ndipo unapo-menage DARKX HUB nzima — idhinisha tools mpya, hariri, futa, na fuatilia takwimu za site.</p>
+      </div>
+    </div>
+
+    <div id="tab-pending" class="tab-panel hidden">
+      <div class="section-head"><h2>Tools Zinazosubiri Idhini</h2></div>
+      <div id="pending-list"></div>
+    </div>
+
+    <div id="tab-tools" class="tab-panel hidden">
+      <div class="section-head"><h2>Tools Zote</h2></div>
+      <div id="tools-list"></div>
+    </div>
+
+    <div id="tab-users" class="tab-panel hidden">
+      <div class="section-head"><h2>Watumiaji</h2></div>
+      <div id="users-list"></div>
+    </div>
+  </main>
+</div>
+
+<!-- Edit modal -->
+<div id="edit-modal" class="hidden" style="position:fixed; inset:0; background:rgba(6,9,21,0.75); z-index:60; display:flex; align-items:center; justify-content:center; padding:20px;">
+  <div class="panel" style="max-height:88vh; overflow:auto;">
+    <h3>Hariri Tool</h3>
+    <div id="edit-alert"></div>
+    <form id="edit-form" class="mt-16">
+      <input type="hidden" id="e-id">
+      <div class="field"><label>Jina</label><input id="e-name" required></div>
+      <div class="grid-2">
+        <div class="field"><label>Category</label><input id="e-category"></div>
+        <div class="field"><label>Namba</label><input id="e-number"></div>
+      </div>
+      <div class="field"><label>Download Link</label><input id="e-download" type="url"></div>
+      <div class="field"><label>Preview Link</label><input id="e-preview" type="url"></div>
+      <div class="field"><label>Cover Link</label><input id="e-cover" type="url"></div>
+      <div class="grid-2">
+        <div class="field"><label>Size</label><input id="e-size"></div>
+        <div class="field"><label>Version</label><input id="e-version"></div>
+      </div>
+      <div class="field"><label>Maelezo</label><textarea id="e-desc"></textarea></div>
+      <div class="field">
+        <label>Status</label>
+        <select id="e-status">
+          <option value="pending">Pending</option>
+          <option value="approved">Approved</option>
+          <option value="rejected">Rejected</option>
+        </select>
+      </div>
+      <div class="flex gap-8 mt-16">
+        <button type="submit" class="btn btn-primary">Hifadhi</button>
+        <button type="button" class="btn btn-ghost" id="edit-cancel">Ghairi</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="/api.js"></script>
+<script src="/admin.js"></script>
+</body>
+</html>

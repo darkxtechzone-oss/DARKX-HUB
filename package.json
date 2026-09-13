@@ -1,0 +1,17 @@
+{
+  "name": "darkx-hub",
+  "version": "1.0.0",
+  "description": "DARKX HUB - Play Store ya Tools za DarkX (MongoDB + flat files)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongoose": "^8.5.0",
+    "dotenv": "^16.4.5"
+  }
+}

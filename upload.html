@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weka Tool — DARKX HUB</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div id="nav-slot"></div>
+
+<main class="container section">
+  <div class="section-head">
+    <h2>Weka Tool Yako</h2>
+    <span class="sub">Itapitiwa na admin kabla ya kuonekana hadharani</span>
+  </div>
+
+  <div id="auth-guard" class="panel center hidden">
+    <h3>Ingia Kwanza</h3>
+    <p class="text-muted mt-8">Unahitaji akaunti ili kuweka tool. Ni haraka tu.</p>
+    <a href="/login" class="btn btn-primary mt-16">Ingia / Jisajili</a>
+  </div>
+
+  <form id="upload-form" class="panel hidden">
+    <div id="form-alert"></div>
+
+    <div class="field">
+      <label>Jina la Tool *</label>
+      <input type="text" id="f-name" required placeholder="mfano: DARKX-XMD666">
+    </div>
+
+    <div class="grid-2">
+      <div class="field">
+        <label>Namba ya Mawasiliano *</label>
+        <input type="text" id="f-number" required placeholder="255xxxxxxxxx">
+      </div>
+      <div class="field">
+        <label>Category</label>
+        <input type="text" id="f-category" placeholder="mfano: WhatsApp Bot">
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Download Link *</label>
+      <input type="url" id="f-download" required placeholder="https://...">
+    </div>
+
+    <div class="field">
+      <label>Preview Link *</label>
+      <input type="url" id="f-preview" required placeholder="https://...">
+    </div>
+
+    <div class="field">
+      <label>Link ya Cover (picha kuu)</label>
+      <input type="url" id="f-cover" placeholder="https://...">
+    </div>
+
+    <div class="grid-2">
+      <div class="field">
+        <label>Ukubwa (Size)</label>
+        <input type="text" id="f-size" placeholder="mfano: 45MB">
+      </div>
+      <div class="field">
+        <label>Version</label>
+        <input type="text" id="f-version" placeholder="mfano: 1.0">
+      </div>
+    </div>
+
+    <div class="field">
+      <label>More Details / Maelezo</label>
+      <textarea id="f-desc" placeholder="Eleza tool yako, features, jinsi inavyofanya kazi..."></textarea>
+    </div>
+
+    <div class="field">
+      <label>Links za Ziada (Screenshots/Preview) — hadi 12</label>
+      <div id="extra-links"></div>
+      <button type="button" class="btn btn-ghost btn-sm mt-8" id="add-link">+ Ongeza Link</button>
+      <div class="hint">Optional. Zinaweza kuwa screenshots au links za ziada za preview.</div>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-block mt-16">Chapisha Tool</button>
+  </form>
+</main>
+
+<div id="footer-slot"></div>
+
+<script src="/api.js"></script>
+<script src="/upload.js"></script>
+</body>
+</html>
